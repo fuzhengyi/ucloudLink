@@ -17,6 +17,9 @@ let webpackConfig = {
   entry: {
     app: './src/main.js'
   },
+  plugins:[
+	generateAppConfig(packageConfig)
+  ],
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -105,11 +108,10 @@ module.exports = vuxLoader.merge(webpackConfig, {
           }
         }
       }
-    },
-    new webpack.ProvidePlugin({
+    }
+    /*new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    }),
-    generateAppConfig(packageConfig)
+    }),*/
   ]
 })
