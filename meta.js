@@ -10,39 +10,47 @@ module.exports = {
   },
   "prompts": {
     "name": {
-      "type": "string",
+      "type": "input",
       "required": true,
-      "message": "Project name"
+      "message": "项目名"
     },
     "description": {
-      "type": "string",
+      "type": "input",
       "required": false,
-      "message": "Project description",
+      "message": "写一下该项目的描述",
       "default": "A Vue.js project"
     },
     "author": {
-      "type": "string",
-      "message": "Author"
+      "type": "input",
+      "message": "作者"
     },
     "build": {
       "type": "list",
-      "message": "Vue build",
+      "message": "请选择一种编译模式",
       "choices": [
         {
-          "name": "Runtime + Compiler: recommended for most users",
+          "name": "运行 + 编译: 作者推荐这种模式",
           "value": "standalone",
-          "short": "standalone"
+          "short": "运行 + 编译"
         },
         {
-          "name": "Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere",
+          "name": "运行: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere",
           "value": "runtime",
-          "short": "runtime"
+          "short": "运行"
         }
       ]
     },
     "router": {
       "type": "confirm",
-      "message": "Install vue-router?"
+      "message": "安装vue-router吗?"
+    },
+    "less": {
+      "type": "confirm",
+      "message": "安装less吗?"
+    },
+    "sass": {
+      "type": "confirm",
+      "message": "安装sass吗?"
     },
     "less":{
         "type":"confirm",
@@ -54,7 +62,7 @@ module.exports = {
     },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code?"
+      "message": "使用esLint编码模式不?"
     },
     "lintConfig": {
       "when": "lint",
